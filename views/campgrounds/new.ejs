@@ -1,0 +1,49 @@
+<% layout('layouts/boilerplate') %>
+    <div class="container d-flex justify-content-center align-items-center mt-5">
+        <div class="row flex-fill">
+            <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="text-center cart-title">New Campground</h5>
+                        <form action="/campgrounds" method="POST" novalidate class="validated-form"
+                            enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label class="form-label" for="title">Title</label>
+                                <input class="form-control" type="text" name="campground[title]" placeholder="Camp name"
+                                    id="title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="location">Location</label>
+                                <input class="form-control" type="text" name="campground[location]"
+                                    placeholder="City name" id="location" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="price" class="form-label">Price</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="price-label">R$</span>
+                                    <input type="text" class="form-control" id="price" name="campground[price]"
+                                        placeholder="0.00" aria-describedby="price-label" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="description">Description</label>
+                                <textarea class="form-control" type="text" name="campground[description]"
+                                    placeholder="Share your experience" id="description" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <div class="mb-3">
+                                    <label for="formFileMultiple" class="form-label">Camp Image(s)</label>
+                                    <input class="form-control" type="file" id="formFileMultiple" name="image" multiple>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-success float-md-start">Submit</button>
+                                <a class="btn btn-danger float-md-end" href="/campgrounds">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
